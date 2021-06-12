@@ -10,3 +10,11 @@ export interface LoginDto {
         username: string;
         password: string;
 }
+
+export interface RegisterDto {
+        fullname: string;
+        email: string;
+        username: string;
+        password: string;
+        confirmPassword: string;
+}

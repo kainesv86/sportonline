@@ -5,19 +5,22 @@ import { Link } from "react-router-dom";
 import { store } from "../store";
 import { userActions } from "../store/user";
 
-export interface LoginFormProps {}
+export interface RegisterFormProps {}
 
-interface LoginType {
+interface RegisterType {
+        fullname: string;
+        email: string;
         username: string;
         password: string;
+        confirmPassword: string;
 }
 
-const LoginForm: React.FunctionComponent<LoginFormProps> = () => {
-        const { register, handleSubmit } = useForm<LoginType>();
+const RegisterForm: React.FunctionComponent<RegisterFormProps> = () => {
+        const { register, handleSubmit } = useForm<RegisterType>();
 
-        const onSubmit: SubmitHandler<LoginType> = (data) => {
+        const onSubmit: SubmitHandler<RegisterType> = (data) => {
                 console.log("Login Click");
-                store.dispatch(userActions.userLogin(data));
+                store.dispatch(userActions.userRegister(data));
         };
 
         return (
@@ -26,8 +29,24 @@ const LoginForm: React.FunctionComponent<LoginFormProps> = () => {
                         onSubmit={handleSubmit(onSubmit)}
                 >
                         <h1 className="mb-4 text-3xl font-semibold text-center text-green-300">
-                                Login with Sport Online
+                                Register with Sport Online
                         </h1>
+                        <TextField
+                                required
+                                id="fullname"
+                                label="Fullname"
+                                defaultValue=""
+                                style={{ width: "100%", margin: "0 0 24px 0" }}
+                                {...register("fullname")}
+                        />
+                        <TextField
+                                required
+                                id="email"
+                                label="Email"
+                                defaultValue=""
+                                style={{ width: "100%", margin: "0 0 24px 0" }}
+                                {...register("email")}
+                        />
                         <TextField
                                 required
                                 id="username"
@@ -45,19 +64,28 @@ const LoginForm: React.FunctionComponent<LoginFormProps> = () => {
                                 style={{ width: "100%", margin: "0 0 24px 0" }}
                                 {...register("password")}
                         />
+                        <TextField
+                                required
+                                id="confirmPassword"
+                                label="Confirm Password"
+                                defaultValue=""
+                                type="password"
+                                style={{ width: "100%", margin: "0 0 24px 0" }}
+                                {...register("confirmPassword")}
+                        />
                         <FormControlLabel
                                 control={<Checkbox name="checkedA" />}
                                 label="Remember password"
                                 style={{ margin: "0 0 24px 0" }}
                         />
                         <Button variant="contained" color="secondary" type="submit">
-                                Login
+                                Register
                         </Button>
                         <div className="flex justify-center mt-6">
-                                <p className="text-base font-medium text-gray-700">Don't have a account?</p>
-                                <Link to="/register">
+                                <p className="text-base font-medium text-gray-700">have a account yet?</p>
+                                <Link to="/login">
                                         <p className="ml-1 text-base font-medium text-gray-900 hover:text-blue-500">
-                                                Sign up here
+                                                Sign in here
                                         </p>
                                 </Link>
                         </div>
@@ -65,4 +93,4 @@ const LoginForm: React.FunctionComponent<LoginFormProps> = () => {
         );
 };
 
-export default LoginForm;
+export default RegisterForm;

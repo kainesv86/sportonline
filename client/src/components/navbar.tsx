@@ -9,13 +9,13 @@ const NavBar: React.FunctionComponent<NavBarProps> = () => {
                 <div className="bg-white">
                         <AppBar position="static" color="inherit">
                                 <Toolbar>
-                                        <div className="flex w-full justify-between items-center">
+                                        <div className="flex items-center justify-between w-full">
                                                 <Link to="/">
                                                         <IconButton edge="start" color="inherit" aria-label="menu">
                                                                 <img src="/share/logo.png" alt="" className="w-40" />
                                                         </IconButton>
                                                 </Link>
-                                                <ul className="flex transform -translate-x-10">
+                                                <ul className="flex transform -translate-x-6">
                                                         <li className="mr-10">
                                                                 <Link to="/trainer">
                                                                         <Button color="primary">Trainer</Button>

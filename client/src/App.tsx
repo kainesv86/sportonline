@@ -1,6 +1,7 @@
 import NavBar from "./components/navbar";
 import Home from "./pages/home";
 import Login from "./pages/login";
+import Register from "./pages/register";
 
 import { Route, Switch } from "react-router-dom";
 
@@ -11,6 +12,9 @@ function App() {
                         <Switch>
                                 <Route path="/login">
                                         <Login />
+                                </Route>
+                                <Route path="/register">
+                                        <Register />
                                 </Route>
                                 <Route path="/trainer"></Route>
                                 <Route path="/course"></Route>
