@@ -3,6 +3,7 @@ import Home from "./pages/home";
 import Login from "./pages/login";
 import Register from "./pages/register";
 import Trainer from "./pages/trainer";
+import Course from "./pages/course";
 
 import { Route, Switch } from "react-router-dom";
 
@@ -20,7 +21,9 @@ function App() {
                                 <Route path="/trainer">
                                         <Trainer />
                                 </Route>
-                                <Route path="/course"></Route>
+                                <Route path="/course">
+                                        <Course />
+                                </Route>
                                 <Route path="/community"></Route>
                                 <Route path="/">
                                         <Home />
