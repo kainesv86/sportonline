@@ -3,21 +3,17 @@ import { Link } from "react-router-dom";
 
 export interface BuyCourseProps {}
 
-interface course {
-        label: string;
-        isBuy: boolean;
-}
-
-const courses: course[] = [
-        { label: "Lesson 1", isBuy: false },
-        { label: "Lesson 2", isBuy: true },
-        { label: "Lesson 3", isBuy: true },
-        { label: "Lesson 4", isBuy: true },
-        { label: "Lesson 5", isBuy: true },
-];
+const courses: Object[] = [{}, {}, {}, {}, {}];
 
 const BuyCourse: React.FunctionComponent<BuyCourseProps> = () => {
-        const [course, setCourse] = React.useState<Boolean[]>([false, true, false, true, false]);
+        const [course, setCourse] = React.useState<Boolean[]>([false, false, false, false, false]);
+
+        const HandleOnClick = (index: number) => {
+                let newCourse: Boolean[] = { ...course };
+                newCourse[index] = true;
+                setCourse(newCourse);
+        };
+
         return (
                 <div className="flex items-center justify-center flex-1 bg-gray-900">
                         <div className="flex items-start justify-center">
@@ -40,19 +36,15 @@ const BuyCourse: React.FunctionComponent<BuyCourseProps> = () => {
                                         style={{ width: "780px" }}
                                         className="flex flex-col items-center p-6 ml-16 bg-gray-200 rounded"
                                 >
-                                        {courses.map((item, index) => (
+                                        {courses.map((_, index) => (
                                                 <div
                                                         className="flex items-center justify-between w-full px-4 py-2 mb-2 font-semibold text-gray-100 bg-blue-400 rounded"
-                                                        key={item.label}
+                                                        key={index}
                                                 >
-                                                        <p>{item.label}</p>
+                                                        <p>{`Lesson ${index + 1}`}</p>
                                                         <div
                                                                 className="w-40 p-3 bg-indigo-500 rounded cursor-pointer"
-                                                                onClick={() => {
-                                                                        let newCourse: Boolean[] = { ...course };
-                                                                        newCourse[index] = true;
-                                                                        setCourse(newCourse);
-                                                                }}
+                                                                onClick={() => HandleOnClick(index)}
                                                         >
                                                                 {course[index] ? "Already purchased" : "Buy lesson"}
                                                         </div>
