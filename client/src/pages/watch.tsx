@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Component } from "react";
 
 export interface WatchProps {}
 
@@ -39,7 +38,7 @@ const Watch: React.FunctionComponent<WatchProps> = () => {
                                 ))}
                         </div>
                         <div className="mr-28" style={{ width: "1280px", height: "720px" }}>
-                                <iframe src={videos[played].url} className="w-full h-full"></iframe>
+                                <iframe src={videos[played].url} className="w-full h-full" title="None"></iframe>
                         </div>
                 </div>
         );

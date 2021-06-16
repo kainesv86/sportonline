@@ -41,7 +41,10 @@ const BuyCourse: React.FunctionComponent<BuyCourseProps> = () => {
                                         className="flex flex-col items-center p-6 ml-16 bg-gray-200 rounded"
                                 >
                                         {courses.map((item, index) => (
-                                                <div className="flex items-center justify-between w-full px-4 py-2 mb-2 font-semibold text-gray-100 bg-blue-400 rounded">
+                                                <div
+                                                        className="flex items-center justify-between w-full px-4 py-2 mb-2 font-semibold text-gray-100 bg-blue-400 rounded"
+                                                        key={item.label}
+                                                >
                                                         <p>{item.label}</p>
                                                         <div
                                                                 className="w-40 p-3 bg-indigo-500 rounded cursor-pointer"

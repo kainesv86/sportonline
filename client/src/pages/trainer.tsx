@@ -16,7 +16,9 @@ const Trainer: React.FunctionComponent<TrainerProps> = () => {
         return (
                 <div className="flex flex-col items-center justify-center flex-1 py-24 overflow-hidden bg-gray-900">
                         <div
-                                className={`flex duration-500 transform ${trainer === 0 ? `` : "-"}translate-x-1/4`}
+                                className={`flex duration-500 transform ${
+                                        trainer === 0 ? "translate-x-1/4" : "-translate-x-1/4"
+                                }`}
                                 style={{ width: "200%" }}
                         >
                                 <div className="flex items-center justify-between flex-1 w-full px-32">
@@ -142,7 +144,7 @@ const Trainer: React.FunctionComponent<TrainerProps> = () => {
                                         <div className="rounded w-180 h-116">
                                                 <img
                                                         src="share/adam.jpg"
-                                                        alt=""
+                                                        alt="Whe"
                                                         className="object-cover object-top w-full h-full"
                                                 />
                                         </div>
