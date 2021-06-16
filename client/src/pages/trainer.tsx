@@ -14,7 +14,7 @@ const Trainer: React.FunctionComponent<TrainerProps> = () => {
         };
 
         return (
-                <div className="flex flex-col items-center justify-center flex-1 py-24 overflow-hidden from-indigo-500 to-blue-400 bg-gradient-to-l">
+                <div className="flex flex-col items-center justify-center flex-1 py-24 overflow-hidden bg-gray-900">
                         <div
                                 className={`flex duration-500 transform ${trainer === 0 ? `` : "-"}translate-x-1/4`}
                                 style={{ width: "200%" }}

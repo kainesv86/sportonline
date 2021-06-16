@@ -9,6 +9,8 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
+import { Link } from "react-router-dom";
+
 const useStyles = makeStyles({
         root: {
                 maxWidth: 500,
@@ -23,7 +25,7 @@ export interface CourseProps {}
 const Course: React.FunctionComponent<CourseProps> = () => {
         const classes = useStyles();
         return (
-                <div className="flex flex-col flex-1 pt-20 bg-gradient-to-br from-red-400 to-orange-400 ">
+                <div className="flex flex-col flex-1 pt-20 bg-gray-900 ">
                         <h1 className="mb-10 text-5xl font-semibold text-center text-green-400">List of Courses</h1>
                         <div className="flex justify-around">
                                 <Card className={classes.root}>
@@ -45,9 +47,11 @@ const Course: React.FunctionComponent<CourseProps> = () => {
                                                 </CardContent>
                                         </CardActionArea>
                                         <CardActions>
-                                                <Button size="small" color="primary">
-                                                        Register Course
-                                                </Button>
+                                                <Link to="course/1">
+                                                        <Button size="small" color="primary">
+                                                                Register Course
+                                                        </Button>
+                                                </Link>
                                         </CardActions>
                                 </Card>
                                 <Card className={classes.root}>
@@ -69,9 +73,11 @@ const Course: React.FunctionComponent<CourseProps> = () => {
                                                 </CardContent>
                                         </CardActionArea>
                                         <CardActions>
-                                                <Button size="small" color="primary">
-                                                        Register Course
-                                                </Button>
+                                                <Link to="course/2">
+                                                        <Button size="small" color="primary">
+                                                                Register Course
+                                                        </Button>
+                                                </Link>
                                         </CardActions>
                                 </Card>
                                 <Card className={classes.root}>
@@ -93,9 +99,11 @@ const Course: React.FunctionComponent<CourseProps> = () => {
                                                 </CardContent>
                                         </CardActionArea>
                                         <CardActions>
-                                                <Button size="small" color="primary">
-                                                        Register Course
-                                                </Button>
+                                                <Link to="course/3">
+                                                        <Button size="small" color="primary">
+                                                                Register Course
+                                                        </Button>
+                                                </Link>
                                         </CardActions>
                                 </Card>
                         </div>
